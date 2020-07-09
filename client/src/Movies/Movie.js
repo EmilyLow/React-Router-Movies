@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import useParams from 'react-router-dom';
 
 
-//I'm trying to figure out where Movie is actually used, and if its the same thing as lower case movie when that's used?
 
-//Even if this works I'm unclear how this leads to the browser navigating to the right place. Where is a Movie being created and using this? It doesn't seem to be in MovieList directly? It looks like in the main App.js maybe? But then where is MovieDetails getting involved?
 
 const Movie = (props) => {
   const [movie, setMovie] = useState();
+  //const { id } = useParams();
  
   useEffect(() => {
     
-    const id = 1;
+   
     
     // change ^^^ that line and grab the id from the URL
     // You will NEED to add a dependency array to this effect hook
 
 
-  
-    //const id = movie.id;
+    //const id = 0;
+    const id = props.match.params.id;
     //So maybe this works, the problem is just that it hasn't been defined yet?
     
 
@@ -33,9 +33,11 @@ const Movie = (props) => {
           console.error(error);
         });
 
-  }, [movie]);
-  //Think maybe the problem is here but don't know what else to try
+  }, [props.match.params.id]);
+  //I think maybe the problem is here? [{movie}] doesn't work. But it should only be triggered when movie changes? Or only when the URL changes? Should maybe read mroe about dependency arrays and effect hooks.
   
+
+
   // Uncomment this only when you have moved on to the stretch goals
   // const saveMovie = () => {
   //   const addToSavedList = props.addToSavedList;

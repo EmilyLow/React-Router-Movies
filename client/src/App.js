@@ -34,7 +34,7 @@ const App = () => {
    //Also whats the difference between making it a child (like with MovieList) and adding it as component (like with Movie)?
     <div>
       <SavedList list={savedList} />
-      <Route path="/">
+      <Route exact path="/">
           <MovieList movies={movieList}/>
       </Route> 
       <Route path="/movies/:id" component={Movie}/>
