@@ -30,7 +30,8 @@ const App = () => {
   };
 
   return (
-   
+   //I can't tell if the 'id' bit is correct here. If so why does this work if its part of a string?
+   //Also whats the difference between making it a child (like with MovieList) and adding it as component (like with Movie)?
     <div>
       <SavedList list={savedList} />
       <Route path="/">

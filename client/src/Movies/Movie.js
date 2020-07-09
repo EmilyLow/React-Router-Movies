@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+
+//I'm trying to figure out where Movie is actually used, and if its the same thing as lower case movie when that's used?
+
+
 const Movie = (props) => {
   const [movie, setMovie] = useState();
  
@@ -18,7 +22,8 @@ const Movie = (props) => {
           console.error(error);
         });
 
-  },[]);
+  }, []);
+  //Changed from [] to id but that's not quite right
   
   // Uncomment this only when you have moved on to the stretch goals
   // const saveMovie = () => {
