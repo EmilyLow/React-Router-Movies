@@ -12,6 +12,7 @@ const MovieList = props => {
 }
 
 //Why is the props { movie } here, and not just 'props' or 'movie'?
+//Is movie an example of Movie?
 function MovieDetails({ movie }) {
   const { title, director, metascore, stars } = movie;
   return (

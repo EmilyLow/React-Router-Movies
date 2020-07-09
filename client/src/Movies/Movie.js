@@ -4,6 +4,7 @@ import axios from 'axios';
 
 //I'm trying to figure out where Movie is actually used, and if its the same thing as lower case movie when that's used?
 
+//Even if this works I'm unclear how this leads to the browser navigating to the right place. Where is a Movie being created and using this? It doesn't seem to be in MovieList directly? It looks like in the main App.js maybe? But then where is MovieDetails getting involved?
 
 const Movie = (props) => {
   const [movie, setMovie] = useState();
@@ -25,8 +26,8 @@ const Movie = (props) => {
         .get(`http://localhost:5000/api/movies/${id}`)
         .then(response => {
           setMovie(response.data);
-          console.log(response.data);
-          console.log(movie);
+          //console.log(response.data);
+          //console.log(movie); 
         })
         .catch(error => {
           console.error(error);
