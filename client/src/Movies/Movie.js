@@ -9,21 +9,31 @@ const Movie = (props) => {
   const [movie, setMovie] = useState();
  
   useEffect(() => {
+    
     const id = 1;
+    
     // change ^^^ that line and grab the id from the URL
     // You will NEED to add a dependency array to this effect hook
+
+
+  
+    //const id = movie.id;
+    //So maybe this works, the problem is just that it hasn't been defined yet?
+    
 
        axios
         .get(`http://localhost:5000/api/movies/${id}`)
         .then(response => {
           setMovie(response.data);
+          console.log(response.data);
+          console.log(movie);
         })
         .catch(error => {
           console.error(error);
         });
 
-  }, []);
-  //Changed from [] to id but that's not quite right
+  }, [movie]);
+  //Think maybe the problem is here but don't know what else to try
   
   // Uncomment this only when you have moved on to the stretch goals
   // const saveMovie = () => {
